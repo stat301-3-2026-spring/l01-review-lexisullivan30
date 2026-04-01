@@ -56,7 +56,11 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+In unsupervised learning, the model does not have a given target variable to supervise
+the predictive process. Instead, the model must use the entirety of the unstructured data to 
+extract patterns and information. In the supervised learning case, the model has a specific
+target variable that guides the algorithm and structures the predictive process to answer
+a clear objective.
 
 :::
 
@@ -69,7 +73,9 @@ In general, we can classify a model by its purpose into 1 of the 3 categories be
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+These models aim to understand a data set from input and output variables, and ultimately describe
+the patterns and relationships of the variables. Parametric models are preferable for descriptive
+models for these reasons because they intrinsically summarize statistical relationships.
 
 :::
 
@@ -78,7 +84,11 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+These models aim to provide explanations for the relationships represented in the data set,
+and ultimately infer where relationships have statistical significance within a population.
+These models might analyze whether relationships between variables are causal, or test
+whether relationships between variables in a data set are generalizable to a population.
+Parametric models are very useful for these types of models because of probability theory.
 
 :::
 
@@ -87,7 +97,10 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+These models aim to create accurate predictions based on the data set, regardless of the
+specifics of the modeling process. Parametric and non-parametric models are both critical
+for these models because predictive models do not specifically require explanations for how
+the variables are utilized to generate accurate predictions.
 
 :::
 
@@ -101,8 +114,9 @@ What does it mean to be a mechanistic model?
 
 ::: {.callout-tip icon="false"}
 ## Solution
-
-YOUR SOLUTION HERE
+***NOT DONE***
+Mechanistic models typically correlate with parametric modeling because they make many
+assumptions. 
 
 :::
 
