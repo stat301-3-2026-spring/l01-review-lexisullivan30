@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexis Sullivan">
-<meta name="dcterms.date" content="2026-04-01">
+<meta name="dcterms.date" content="2026-04-04">
 
 <title>L01 Alexis Sullivan</title>
 <style>
@@ -2229,7 +2229,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 1, 2026</p>
+      <p class="date">April 4, 2026</p>
     </div>
   </div>
   
@@ -2274,7 +2274,22 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>The following procedure can be followed to construct a supervised machine learning model:</p>
+<ol type="1">
+<li>Explore the outcome variable (assessing for missingness or class imbalances)</li>
+<li>Transform the outcome variable</li>
+<li>Split the dataset into training and testing data</li>
+<li>Divide the training set into folds, if using resampling for the process</li>
+<li>Use feature engineering to construct a complex recipe along with a baseline recipe</li>
+<li>Specify the model types (ie. regression/classification, linear/tree-based)</li>
+<li>Define model workflows (ie. add model specs and recipes)</li>
+<li>Define hyperparamter tuning grids</li>
+<li>Tune hyperparameter grids to workflows and folds</li>
+<li>Evaluate highest-performing model types and identify ideal hyperparameter values</li>
+<li>Fit the best model type to the entire training data set</li>
+<li>Test the fitted model on the entire testing data set</li>
+<li>Evaluate the performance of the final model in making predictions</li>
+</ol>
 </div>
 </div>
 </section>
@@ -2363,7 +2378,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong><em>NOT DONE</em></strong> Mechanistic models typically correlate with parametric modeling because they make many assumptions.</p>
+<p>Mechanistic models have a known equation where the model assigns parametric values to the functional form according to the predictor variables and training dataset. These models make assumptions based on underlying mathematical theory, making them highly interpretable. However, because this model type relies on a specified formula, the models are not flexible to the datasets like an empirically driven model type.</p>
 </div>
 </div>
 </section>
@@ -2380,7 +2395,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Empirically driven models do not have a known equation that the model must leverage to create predictions. These models use the observational data within the dataset, rather than underlying mathematical theory and formulas, to generate predictions. These models tend to be highly flexible to the specific observations in the dataset; however, they are more difficult to interpret since there is no mathematical theory driving the process.</p>
 </div>
 </div>
 </section>
@@ -2397,7 +2412,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Parametric models tend to correlate with mechanistic models because these models inherently estimate parameter values for the given mathematical formulas. Nonparametric models tend to correlate with empirically driven models because these models do not depend on a specified mathematical formula, and therefore do not inherently generate parameter values based on a functional form.</p>
 </div>
 </div>
 </section>
@@ -2414,7 +2429,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Mechanistic models are easier to interpret because of the mathematical theory which clearly guides the creation of the models. For example, a linear models will have clear parameter values given to each predictor variable to generate predictions, while a tree-based model uses loose connections between observations to generate predictions.</p>
 </div>
 </div>
 </section>
@@ -2431,7 +2446,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Empirically driven models are more flexible than mechanistic models because they inherently rely on the specific observations held within a dataset to create predictions. A mechanistic model has a specified formula guiding the model’s prediction, which could simply not match the relationships of the predictor variables in that particular dataset. An empirically driven model does not possess the same constraints from a formula, and merely uses the relationships present in the dataset, making it much more reliant on the dataset to inform its construction.</p>
 </div>
 </div>
 </section>
@@ -2448,7 +2463,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Variance describes how predicted outcomes vary based on the datasets supplied to the models, while bias describes the errors from real-world data collection or imbalances. More flexibile models, like the empircally driven models, tend to have a higher variance due to their reliance on the specific observations in the dataset. For example, the predictions generated by a tree-model will differ based on the observations of that dataset, and are less likely to be reproducible. Conversely, the predictions generated by a linear model will vary less based on the observations of the datset because the model follows underlying mathematical theory. However, more flexible models tend to have a lower bias because they can adjust to fit the dataset’s observations. Mechanistic models must follow assumptions about the dataset and the functional form, leading to more bias.</p>
 </div>
 </div>
 </section>
@@ -2466,7 +2481,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Regression machine learning problems generate numeric predictions, while classification machine learning problems generate categorical (ie. class) predictions.</p>
 </div>
 </div>
 </section>
@@ -2483,7 +2498,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Stratifying by the target variable is always useful to resolve any class imbalances. Stratification ensures that data at all levels of the outcome variable are properly represented within the training data and folds. It alleviates class imbalances in classification problems or numeric skews in regression problems.</p>
 </div>
 </div>
 </section>
@@ -2500,7 +2515,8 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In Lecture: Prevents overfitting</p>
+<p>V-fold cross validation helps estimate model parameters more accurately by averaging the true population parameters across models built from folds in the original training dataset. Essentially, the V-fold cross validation process constructs multiple models from different versions of the training dataset to inform a single model based on the means of each model. This reduces the bias introduced by the randomness of the initial split, lowering the RMSE of the models because the population parameter should be more accurately measured.</p>
+<p>Also, the resampling procedure alleviate overfitting issues. Because of the nature of resampling, which uses the average of numerous models trained and tested on distinct folds, the models are exposed to more variability and will perform better against test data.</p>
 </div>
 </div>
 </section>
@@ -2517,7 +2533,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Boostrap resampling tends to be more useful on small datasets. V-fold cross validation with few observations can generate too much variance because folds are selected without replacement. Boostrap resampling uses replacement to create folds, which helps when there are a smaller amount of observations, and therefore statistically information, to base predictions on.</p>
 </div>
 </div>
 </section>
@@ -2534,7 +2550,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Certain models rely on parameter values which can be adjusted according to the predictive power of the variables in the dataset. For example, tree models must be supplied with a specific value for the number of trees the model will use to generate predictions. Naturally, some level of the number of trees will create the most effecient and powerful model, but this must be estimated through expsoure to training data and comparison to other levels of the variable. Using a tuning process, these parameter values can be optimized to increase the accuracy of predictions by the models. Because tuning parameters must be specified before the models can be evaluated on testing data, by finding the best values of the hyperparameters through training and resampling, the models’ predictive power can be maximized.</p>
 </div>
 </div>
 </section>
@@ -2551,7 +2567,8 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Root-Mean Square Error (RMSE) calculates the accuracy of numeric estimates by comparing the square-root of the mean difference of observed and predicted values after being squared. This amplifies the impacts of large differences from observed and predicted values because of the squaring of the differences before finding the square-root of the sum.</p>
+<p>Mean Absolute Error (MAE) calculates the accuracy of numeric estimates by comparing the mean of the absolute value of differences between observed and predicted values. Without the squaring of residuals, this metric places smaller emphasis on large differences than an RMSE estimate. However, this metric is quite easy to estimate and interpret.</p>
 </div>
 </div>
 <p>What are two common performance metrics when dealing with a classification ML problem?</p>
@@ -2565,7 +2582,8 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Accuracy calculates the proportion of correct predictions out of every prediction. This metric is the total number of true positives and negatives divided by all predictions, which gives the number of accurate predictions made out of all predictions made by the model.</p>
+<p>Precision calculates the proportion positive predictions, meaning the model must specify a base class or the positive class. Based on the base class, the precision metric finds the proportion of true predicted positives over all positives in the dataset. This metric offers a measurement of how frequently the model generates false positives.</p>
 </div>
 </div>
 </section>
@@ -2586,7 +2604,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>This is an inferential problem because the question searches for a relationship between two variables: number of service calls and customer churn. This is looking to explain a relationship between two variables, not generate a prediction for the value of one variable.</p>
 </div>
 </div>
 <ol start="2" type="1">
@@ -2602,7 +2620,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>This is a predictive problems because the question aims to predict the customer’s behavior based on a set of variables. The problem requires a model that will use previously observed data to inform future predictions, not try to determine relationships among variables to answer a hypothesis.</p>
 </div>
 </div>
 </section>
