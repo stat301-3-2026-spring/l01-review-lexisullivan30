@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexis Sullivan">
-<meta name="dcterms.date" content="2026-04-10">
+<meta name="dcterms.date" content="2026-04-11">
 
 <title>Self Evaluation L01 Alexis Sullivan</title>
 <style>
@@ -2226,9 +2226,15 @@ vertical-align: -.125em;
   <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   <li><a href="#self-evaluation-question-7" id="toc-self-evaluation-question-7" class="nav-link" data-scroll-target="#self-evaluation-question-7">Self Evaluation Question 7</a></li>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#self-evaluation-question-8" id="toc-self-evaluation-question-8" class="nav-link" data-scroll-target="#self-evaluation-question-8">Self Evaluation Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#self-evaluation-question-9" id="toc-self-evaluation-question-9" class="nav-link" data-scroll-target="#self-evaluation-question-9">Self Evaluation Question 9</a></li>
   <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#self-evaluation-question-10-part-a" id="toc-self-evaluation-question-10-part-a" class="nav-link" data-scroll-target="#self-evaluation-question-10-part-a">Self Evaluation Question 10 Part A</a></li>
+  <li><a href="#self-evaluation-question-10-part-b" id="toc-self-evaluation-question-10-part-b" class="nav-link" data-scroll-target="#self-evaluation-question-10-part-b">Self Evaluation Question 10 Part B</a></li>
   <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  <li><a href="#self-evaluation-question-11-part-a" id="toc-self-evaluation-question-11-part-a" class="nav-link" data-scroll-target="#self-evaluation-question-11-part-a">Self Evaluation Question 11 Part A</a></li>
+  <li><a href="#self-evaluation-question-11-part-b" id="toc-self-evaluation-question-11-part-b" class="nav-link" data-scroll-target="#self-evaluation-question-11-part-b">Self Evaluation Question 11 Part B</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2258,7 +2264,7 @@ STAT 301-2</div><p></p>
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 10, 2026</p>
+      <p class="date">April 11, 2026</p>
     </div>
   </div>
   
@@ -2800,8 +2806,11 @@ STAT 301-2</div><p></p>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>5</p>
-<p><strong>Explanation</strong> My answer very clearly communicates the correct answer.</p>
+<p>2</p>
+<p><strong>Explanation</strong></p>
+<p>My original solution does not give enough specifics of the v-folding procedure as defined by the function. I did not include how the data is split between the <code>v</code> number of folds and how this entire process is repeated <code>r</code> times. This generates the <code>v*r</code> amount of models to be used for parameter estimation, which ultimately gives a more accurate measurement of the true population measurements for the parameters. By repeating the cross-validation this reduces the bias that could be introduced from the random splitting.</p>
+<p><strong>Updated Solution</strong></p>
+<p>V-fold cross validation improves parameter estimation in models by averaging the sample parameters across multiple models. The data is divided in a total of <code>v</code> folds, where each fold acts as a testing set for the remaining folds one time. Further, the splitting of the folds is repeated <code>r</code> times, generating a total of <code>v * r</code> models with parameters. The process averages the parameters across all of the models to better capture the true population parameters present in the data. By repeating this process, the bias introduced by the randomly split folds is reduced. Further, the process reduces overfitting issues because the models are exposed to more variability in the available data and evaluated more frequently. Meaning, the v-fold cross validation process improves the model’s test RMSE by providing a more accurate estimate of the model’s performance on unseen data.</p>
 </div>
 </div>
 </section>
@@ -2822,6 +2831,26 @@ STAT 301-2</div><p></p>
 </div>
 </div>
 </section>
+<section id="self-evaluation-question-8" class="level3">
+<h3 class="anchored" data-anchor-id="self-evaluation-question-8">Self Evaluation Question 8</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>2</p>
+<p><strong>Explanation</strong></p>
+<p>My answer only includes one of the key insights of using bootstrap resampling, which is that it is particularly useful when datasets are smaller. However, this procedure also reduces the variance in the dataset because it uses replacement when generating folds. This allows for many more folds to be created than with the v-fold procedure.</p>
+<p><strong>Updated Solution</strong></p>
+<p>Boostrap resampling creates folds using replacement, which means that observations can be randomly repeated within the folds unlike in v-fold cross-validation. This is useful to reduce the variance introduced by folding because more folds can be generated within the same amount of data. Consequently, this is especially useful when datasets are small and have fewer observations, so that a large number of folds can still be generated to train and test the models.</p>
+</div>
+</div>
+</section>
 <section id="question-9" class="level3">
 <h3 class="anchored" data-anchor-id="question-9">Question 9</h3>
 <p>Briefly describe model tuning and why we use it.</p>
@@ -2836,6 +2865,26 @@ STAT 301-2</div><p></p>
 </div>
 <div class="callout-body-container callout-body">
 <p>Certain models rely on parameter values which can be adjusted according to the predictive power of the variables in the dataset. For example, tree models must be supplied with a specific value for the number of trees the model will use to generate predictions. Naturally, some level of the number of trees will create the most effecient and powerful model, but this must be estimated through expsoure to training data and comparison to other levels of the variable. Using a tuning process, these parameter values can be optimized to increase the accuracy of predictions by the models. Because tuning parameters must be specified before the models can be evaluated on testing data, by finding the best values of the hyperparameters through training and resampling, the models’ predictive power can be maximized.</p>
+</div>
+</div>
+</section>
+<section id="self-evaluation-question-9" class="level3">
+<h3 class="anchored" data-anchor-id="self-evaluation-question-9">Self Evaluation Question 9</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>2</p>
+<p><strong>Explanation</strong></p>
+<p>My answer communicates why hyperparameter tuning is necessary and useful, but it could be more specific in how the process works. After reading the sample solution, I should have included language about how each hyperparameter value generates a new model, and all of these models must be refit to the data. This allows for the fit models to be compared, and ensures the best combination of hyperparameters can be selected.</p>
+<p><strong>Updated Solution</strong></p>
+<p>Certain model parameters, called hyperparameters, must be specified prior to the model fitting process, so they are user-defined. The tuning process generates a new model for each level of these hyperparameters. All of these models can be compared in their performance on the dataset, meaning the best combination of hyperparameters can be implemented in the final model by the user. This maximizes the predictive power of each model type. For example, the hyperparameters (ie. learn rate, trees, min_n) can be optimized through model tuning by estimating the best combination across hypothetical models, and the best combination will be used in the final estimation by that specific model type.</p>
 </div>
 </div>
 </section>
@@ -2856,6 +2905,24 @@ STAT 301-2</div><p></p>
 <p>Mean Absolute Error (MAE) calculates the accuracy of numeric estimates by comparing the mean of the absolute value of differences between observed and predicted values. Without the squaring of residuals, this metric places smaller emphasis on large differences than an RMSE estimate. However, this metric is quite easy to estimate and interpret.</p>
 </div>
 </div>
+</section>
+<section id="self-evaluation-question-10-part-a" class="level3">
+<h3 class="anchored" data-anchor-id="self-evaluation-question-10-part-a">Self Evaluation Question 10 Part A</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>5</p>
+<p><strong>Explanation</strong></p>
+<p>My answer very clearly communicates the correct answer.</p>
+</div>
+</div>
 <p>What are two common performance metrics when dealing with a classification ML problem?</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2869,6 +2936,26 @@ STAT 301-2</div><p></p>
 <div class="callout-body-container callout-body">
 <p>Accuracy calculates the proportion of correct predictions out of every prediction. This metric is the total number of true positives and negatives divided by all predictions, which gives the number of accurate predictions made out of all predictions made by the model.</p>
 <p>Precision calculates the proportion positive predictions, meaning the model must specify a base class or the positive class. Based on the base class, the precision metric finds the proportion of true predicted positives over all positives in the dataset. This metric offers a measurement of how frequently the model generates false positives.</p>
+</div>
+</div>
+</section>
+<section id="self-evaluation-question-10-part-b" class="level3">
+<h3 class="anchored" data-anchor-id="self-evaluation-question-10-part-b">Self Evaluation Question 10 Part B</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>2</p>
+<p><strong>Explanation</strong></p>
+<p>My answer very clearly communicates the correct answer, but I could have used a more common measure of classification problem accuracy than precision. I did not originally include the F1 or ROC measures since I felt precision was more intuitive to explain.</p>
+<p><strong>Updated Solution</strong></p>
+<p>Accuracy and F1 measure are common metrics for evaluating classification problem performance.</p>
 </div>
 </div>
 </section>
@@ -2892,6 +2979,23 @@ STAT 301-2</div><p></p>
 <p>This is an inferential problem because the question searches for a relationship between two variables: number of service calls and customer churn. This is looking to explain a relationship between two variables, not generate a prediction for the value of one variable.</p>
 </div>
 </div>
+</section>
+<section id="self-evaluation-question-11-part-a" class="level3">
+<h3 class="anchored" data-anchor-id="self-evaluation-question-11-part-a">Self Evaluation Question 11 Part A</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>4</p>
+<p><strong>Explanation</strong> My answer very clearly communicates the correct answer. This is an inferential problem because the company is estimating relationships between the variables, or how the predictor variable influences changes in the other dependent variables.</p>
+</div>
+</div>
 <ol start="2" type="1">
 <li>How likely is it that a customer will churn in the next month (leave the company/drop the service)?</li>
 </ol>
@@ -2906,6 +3010,23 @@ STAT 301-2</div><p></p>
 </div>
 <div class="callout-body-container callout-body">
 <p>This is a predictive problems because the question aims to predict the customer’s behavior based on a set of variables. The problem requires a model that will use previously observed data to inform future predictions, not try to determine relationships among variables to answer a hypothesis.</p>
+</div>
+</div>
+</section>
+<section id="self-evaluation-question-11-part-b" class="level3">
+<h3 class="anchored" data-anchor-id="self-evaluation-question-11-part-b">Self Evaluation Question 11 Part B</h3>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Score
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>5</p>
+<p><strong>Explanation</strong> My answer very clearly communicates the correct answer.</p>
 </div>
 </div>
 </section>

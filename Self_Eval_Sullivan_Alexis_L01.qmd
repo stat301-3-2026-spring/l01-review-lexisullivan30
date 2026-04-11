@@ -520,10 +520,32 @@ the models are exposed to more variability and will perform better against test 
 ::: {.callout-important icon="false"}
 
 ## Score 
-5
+2
 
 **Explanation**
-My answer very clearly communicates the correct answer.
+
+My original solution does not give enough specifics of the v-folding procedure as
+defined by the function. I did not include how the data is split between the `v` number
+of folds and how this entire process is repeated `r` times. This generates the `v*r`
+amount of models to be used for parameter estimation, which ultimately gives a more
+accurate measurement of the true population measurements for the parameters. By
+repeating the cross-validation this reduces the bias that could be introduced from
+the random splitting. 
+
+**Updated Solution**
+
+V-fold cross validation improves parameter estimation in models by averaging the
+sample parameters across multiple models. The data is divided in a total of `v` folds,
+where each fold acts as a testing set for the remaining folds one time. Further, the
+splitting of the folds is repeated `r` times, generating a total of `v * r` models with
+parameters. The process averages the parameters across all of the models to better
+capture the true population parameters present in the data. By repeating this process,
+the bias introduced by the randomly split folds is reduced. Further, the process reduces
+overfitting issues because the models are exposed to more variability in the available
+data and evaluated more frequently. Meaning, the v-fold cross validation process improves
+the model's test RMSE by providing a more accurate estimate of the model's performance
+on unseen data. 
+
 
 :::
 
@@ -539,6 +561,31 @@ with few observations can generate too much variance because folds are selected 
 replacement. Boostrap resampling uses replacement to create folds, which helps when
 there are a smaller amount of observations, and therefore statistically information, 
 to base predictions on.
+
+:::
+
+### Self Evaluation Question 8
+
+::: {.callout-important icon="false"}
+
+## Score 
+2
+
+**Explanation**
+
+My answer only includes one of the key insights of using bootstrap resampling, which
+is that it is particularly useful when datasets are smaller. However, this procedure
+also reduces the variance in the dataset because it uses replacement when generating folds.
+This allows for many more folds to be created than with the v-fold procedure.
+
+**Updated Solution**
+
+Boostrap resampling creates folds using replacement, which means that observations can
+be randomly repeated within the folds unlike in v-fold cross-validation. This is useful
+to reduce the variance introduced by folding because more folds can be generated within
+the same amount of data. Consequently, this is especially useful when datasets are small
+and have fewer observations, so that a large number of folds can still be generated to
+train and test the models. 
 
 :::
 
@@ -561,6 +608,34 @@ resampling, the models' predictive power can be maximized.
 
 :::
 
+### Self Evaluation Question 9
+
+::: {.callout-important icon="false"}
+
+## Score 
+2
+
+**Explanation**
+
+My answer communicates why hyperparameter tuning is necessary and useful, but it could
+be more specific in how the process works. After reading the sample solution, I should
+have included language about how each hyperparameter value generates a new model, and 
+all of these models must be refit to the data. This allows for the fit models to be
+compared, and ensures the best combination of hyperparameters can be selected. 
+
+**Updated Solution**
+
+Certain model parameters, called hyperparameters, must be specified prior to the model fitting process, 
+so they are user-defined. The tuning process generates a new model for each level of these
+hyperparameters. All of these models can be compared in their performance on the dataset,
+meaning the best combination of hyperparameters can be implemented in the final model by
+the user. This maximizes the predictive power of each model type. For example, the
+hyperparameters (ie. learn rate, trees, min_n) can be optimized through model tuning by
+estimating the best combination across hypothetical models, and the best combination will
+be used in the final estimation by that specific model type.
+
+:::
+
 ### Question 10 
 
 What are two common performance metrics when dealing with a regression ML problem?
@@ -580,6 +655,19 @@ an RMSE estimate. However, this metric is quite easy to estimate and interpret.
 
 :::
 
+### Self Evaluation Question 10 Part A
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+**Explanation**
+
+My answer very clearly communicates the correct answer.
+
+:::
+
 What are two common performance metrics when dealing with a classification ML problem?
 
 ::: {.callout-tip icon="false"}
@@ -595,6 +683,26 @@ proportion of true predicted positives over all positives in the dataset. This m
 a measurement of how frequently the model generates false positives.
 
 :::
+
+### Self Evaluation Question 10 Part B
+
+::: {.callout-important icon="false"}
+
+## Score 
+2
+
+**Explanation**
+
+My answer very clearly communicates the correct answer, but I could have used a more
+common measure of classification problem accuracy than precision. I did not originally
+include the F1 or ROC measures since I felt precision was more intuitive to explain.
+
+**Updated Solution**
+
+Accuracy and F1 measure are common metrics for evaluating classification problem performance.
+
+:::
+
 
 ### Question 11
 
@@ -613,6 +721,21 @@ between two variables, not generate a prediction for the value of one variable.
 
 :::
 
+
+### Self Evaluation Question 11 Part A
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+**Explanation**
+My answer very clearly communicates the correct answer. This is an inferential problem
+because the company is estimating relationships between the variables, or how the predictor
+variable influences changes in the other dependent variables.
+
+:::
+
 2. How likely is it that a customer will churn in the next month (leave the company/drop the service)?
 
 ::: {.callout-tip icon="false"}
@@ -622,6 +745,18 @@ This is a predictive problems because the question aims to predict the customer'
 based on a set of variables. The problem requires a model that will use previously observed
 data to inform future predictions, not try to determine relationships among variables to
 answer a hypothesis.
+
+:::
+
+### Self Evaluation Question 11 Part B
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+**Explanation**
+My answer very clearly communicates the correct answer.
 
 :::
 
